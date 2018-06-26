@@ -50,14 +50,20 @@ app.get('/about', (req, res) =>{
 });
 
 app.get('/maintenance', (req, res) =>{
-
 });
 
 app.get('/bad', (req, res) =>{
   res.send({
     errorMessage: 'error handling request'
-  })
-})
+  });
+});
+
+app.get('/projects', (req, res) =>{
+  res.render('project.hbs', {
+    pageTitle: 'Project page',
+    portfolioMessage: 'Portfolio message here.'
+  });
+});
 
 app.listen(port, () =>{
   console.log(`Server is up on port ${port}`);
